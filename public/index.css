@@ -1,5 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.css-hyum1k-MuiToolbar-root a{
+    text-decoration: none;
+}
+
+.main-logo{
+    margin-top: 8px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+.main-logo h4{
+    font-size: 2em;
+    transition: all .1s ease-in;
+}
+
+.main-logo h4:hover{
+    text-shadow: -5px 5px 5px black;
+}
+
+.posts-grid{
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 5px;
+    width: 100vw;
+}
+
+.item-grid{
+    border-radius: 5px;
+    position: relative;
+    min-height: 31vh;
+    max-height: 31vh;
+    overflow: hidden;
+    transition: all .2s ease-in;
+}
+
+.item-grid:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px black;
+    cursor: pointer;
+}
+
+.item-grid img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: all .2s ease-in;
+}
+
+.item-grid:hover> img{
+    height: 110%;
+    width: 110%;
+}
+
+
+.item-grid-desc{
+    position: absolute;
+    top: 70%;
+    left: 0;
+    min-height: 31%;
+    max-height: 31%;
+    min-width: 100%;
+    max-width: 100%;                  
+    padding: 3px 5px;
+    background-color: rgba(94, 94, 94, 0.65);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.item-grid-desc h4{
+    font-size: 1em;
+    color: white;
+}
+
+.item-grid-desc p{
+    font-size: .9em;
+    color: white;
+    font-size: .7em;
+}
+
+/* ======================NEW POST LINK======================== */
+.new-post-link{
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    padding: 10px;
+    transition: all .1s ease-in;
+}
+.new-post-link:hover{
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+}
+
+
+/* ============================================== */
+.new-post-form-cont{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.upload-file-cont{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 2px;
+    overflow: hidden;
+    height: 50px;
+}
+
+.upload-file-cont input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    border-radius: 4px;
+}
+
+.upload-file-cont input:hover{
+    border: 1px solid white;
+}
+
+.new-post-form-cont button{
+    margin-top: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.65);
+    color: rgba(128, 128, 128, 0.6);
+}
+
+.new-post-form-cont button:hover{
+    border: 1px solid white;
+    color: white;
+}
+
+/* ======================POST======================== */
+.post{
+    height: 90.5vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    overflow: hidden;
+}
+
+.post-main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+    margin: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgb(88, 88, 88);
+}
+
+.main-bar{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.main-bar::-webkit-scrollbar{
+    width: 6px;
+    background-color: black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.main-bar::-webkit-scrollbar-thumb{
+    background-color: rgba(207, 205, 205, 0.6);
+    border-radius: 5px;
+}
+
+.main-bar-img-cont{
+    min-width: 15vw;
+    max-width: 30vw;
+    max-height: 40vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid rgb(0, 0, 0, .6);
+    border-radius: 5px;
+}
+
+.main-bar-img-cont img{
+    width: 97%;
+    height: 97%;
+    border-radius: 5px;
+}
+
+.main-bar-text-cont{
+    display: inline-block;
+    padding: 10px;
+    
+}
+
+.first-bar{
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 1px solid rgb(20, 20, 20);
+    width: 100%;
+}
+
+.main-bar{
+
+}
+
+/* ======================COMMENTS======================== */
+.post-comments{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+
+.comments{
+    border-radius: 5px;
+    height: 65vh;
+    max-height: 65vh;
+    overflow-y: scroll;
+}
+
+.comments::-webkit-scrollbar{
+    width: 6px;
+    background-color: black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.comments::-webkit-scrollbar-thumb{
+    background-color: rgba(207, 205, 205, 0.6);
+    border-radius: 5px;
+}
+
+.comment{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    padding: 5px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.6);
+}
+
+.comment-title-img-cont{
+    border-radius: 5px;
+    max-width: 45px;
+    max-height: 45px;
+    min-width: 45px;
+    min-height: 45px;
+    overflow: hidden;
+}
+
+.comment-title-img-cont img{
+    width: 100%;
+    height: 100%;
+}
+
+.comment-title-body{
+    margin-left: 10px;
+}
+
+.comment-title-body .comment-title-name-cont h4{
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    background-color: rgb(99, 99, 99, .7);
+    margin-bottom: -5px;
+}
+
+/* .comment-body{
+} */
+
+
+
+.post-comments button{
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    color: rgba(128, 128, 128);
+}
+
+.post-comments button:hover{
+    border: 1px solid white;
+    color: white;
+}
+
+/* =======================LOGIN======================== */
+.login-form-cont{
+    padding: 50px;
+    width: 45%;
+    margin: 10vh auto;
+    background-color: rgba(102, 102, 102, 0.5);
+    border-radius: 5px;
 }
